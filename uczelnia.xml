@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Uczelnia>
+	<Wydzial>
+		<Dziekan></Dziekan>
+		<Kierunek skrot="IBM">
+			<nazwa>Inżynieria Bio-Medyczna</nazwa>
+			<miedzywydzialowy>
+				<wydziaL_pom>Chemii</wydzial_pom>
+				<wydziaL_pom>Biologii</wydzial_pom>
+			</miedzywydzialowy>
+			<rok>
+				<nr>1</nr>
+				<semestr nr='1'>
+					<studenci>
+						<student plec="m">
+							<imie>Adam</imie>
+							<nazwisko>Adamowicz</nazwisko>
+							<nr_indeksu>111111</nr_indeksu>
+							<grupa>1</grupa>
+						</student>
+						<student plec="k">
+							<imie>Ania</imie>
+							<nazwisko>Frań</nazwisko>
+							<nr_indeksu>102030</nr_indeksu>
+							<grupa>2</grupa>
+						</student>
+						<student plec="m">
+							<imie>Slim</imie>
+							<nazwisko>Shady</nazwisko>
+							<nr_indeksu>180201</nr_indeksu>
+							<grupa>3</grupa>
+						</student>
+						<student plec="k">
+							<imie>Ala</imie>
+							<nazwisko>Makotowska</nazwisko>
+							<nr_indeksu>151212</nr_indeksu>
+							<grupa>4</grupa>
+						</student>
+						<student plec="k">
+							<imie>Frania</imie>
+							<nazwisko>Nianowska</nazwisko>
+							<nr_indeksu>134091</nr_indeksu>
+							<grupa>4</grupa>
+						</student>
+					</studenci>
+				</semestr>
+				<semestr nr='2'>
+					<studenci>
+						<student plec="m">
+							<imie>Adam</imie>
+							<nazwisko>Wytrwały</nazwisko>
+							<nr_indeksu>239830</nr_indeksu>
+							<grupa>1</grupa>
+						</student>
+						<student plec="k">
+							<imie>Wioletta</imie>
+							<nazwisko>Farciarska</nazwisko>
+							<nr_indeksu>777777</nr_indeksu>
+							<grupa>2</grupa>
+						</student>
+						<student plec="k">
+							<imie>Dominika</imie>
+							<nazwisko>Rozmiarowska</nazwisko>
+							<nr_indeksu>530864</nr_indeksu>
+							<grupa>2</grupa>
+						</student>
+					</studenci>
+				</semestr>
+			</rok>
+			<rok>
+				<nr>2</nr>
+				<semestr nr='1'>
+					<studenci>
+						<student plec="k">
+							<imie>Zuzanna</imie>
+							<nazwisko>Nieduża</nazwisko>
+							<nr_indeksu>123456</nr_indeksu>
+							<grupa>1</grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+					</studenci>
+				</semestr>
+				<semestr nr='2'>
+					<studenci>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+					</studenci>
+				</semestr>
+			</rok>
+			<rok>
+				<nr></nr>
+				<semestr nr='1'>
+					<studenci>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+					</studenci>
+				</semestr>
+				<semestr nr='2'>
+					<studenci>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+						<student plec="m">
+							<imie></imie>
+							<nazwisko></nazwisko>
+							<nr_indeksu></nr_indeksu>
+							<grupa></grupa>
+						</student>
+					</studenci>
+				</semestr>
+			</rok>
+		</Kierunek>
+	</Wydzial>
+</Uczelnia>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sklep_z_grami>
+	<produkty>
+		<gry>
+			<gra id="gra01">
+				<nazwa>Disgaea 5</nazwa>
+				<firma>Nippon Ichi Software</firma>
+				<gatunek>jRPG</gatunek>
+				<cena waluta="zl">149.99</cena>
+			</gra>
+			<gra id="gra02">
+				<nazwa>Mount & Blade II: Bannerlord</nazwa>
+				<firma>TaleWorlds Entertainment</firma>
+				<gatunek>RPG</gatunek>
+				<cena waluta="zl">179.99</cena>
+			</gra>
+			<gra id="gra03">
+				<nazwa>The Witcher 3: Wild Hunt</nazwa>
+				<firma>CD PROJEKT RED</firma>
+				<gatunek>RPG</gatunek>
+				<cena waluta="zl">99.99</cena>
+			</gra>
+			<gra id="gra04">
+				<nazwa>Cyberpunk 2077</nazwa>
+				<firma>CD PROJEKT RED</firma>
+				<gatunek>RPG</gatunek>
+				<cena waluta="zl">149.99</cena>
+			</gra>
+			<gra id="gra05">
+				<nazwa>NBA 2K20</nazwa>
+				<firma>Visual Concepts</firma>
+				<gatunek>Sportowa</gatunek>
+				<cena waluta="euro">59.99</cena>
+			</gra>
+			<gra id="gra06">
+				<nazwa>Gears Tactics</nazwa>
+				<firma>Splash Damage</firma>
+				<gatunek>Strategia</gatunek>
+				<cena waluta="USD">‎59.99</cena>
+			</gra>
+		</gry>
+		<akcesoria>
+			<klawiatura id="kla01">
+				<nazwa>GK900 RGB</nazwa>
+				<typ>mechaniczna</typ>
+				<kabel miara="m">2</kabel>
+				<firma>MAD DOG</firma>
+				<cena waluta="zl">199</cena>
+			</klawiatura>
+			<klawiatura id="kla02">
+				<nazwa>Rhod 400 RGB</nazwa>
+				<typ>membranowa</typ>
+				<kabel miara="m">2</kabel>
+				<firma>GENESIS</firma>
+				<cena waluta="zl">79.04</cena>
+			</klawiatura>
+			<mysz id="mys01">
+				<nazwa>Defender Cyber MB-560L</nazwa>
+				<typ>mechaniczna</typ>
+				<kabel miara="m">1.5</kabel>
+				<firma>LAMA </firma>
+				<cena waluta="zl">20</cena>
+			</mysz>
+			<mysz id="mys02">
+				<nazwa>G102 Prodigy</nazwa>
+				<typ>Laserowa</typ>
+				<firma>Logitech</firma>
+				<cena waluta="zl">99.99</cena>
+			</mysz>
+			<sluchawki id="slu01">
+				<nazwa>E65BTNC</nazwa>
+				<firma>JBL</firma>
+				<pasmo_przenoszenia>20 - 20000</pasmo_przenoszenia>
+				<cena waluta="zl">359</cena>
+			</sluchawki>
+			<sluchawki id="slu02">
+				<nazwa>MDR-ZX330BT</nazwa>
+				<firma>Sony</firma>
+				<pasmo_przenoszenia>20 - 20000</pasmo_przenoszenia>
+				<cena waluta="zl">179</cena>
+			</sluchawki>
+		</akcesoria>
+	</produkty>
+	<zamówienia>
+		<zamówienie id="00001">
+			<produkt>
+				<id>gra01</id>
+				<ilosc>2</ilosc>
+			</produkt>
+			<produkt>
+				<id>kla01</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<dane_osobowe>
+				<imie>Van</imie>
+				<nazwisko>Wilder</nazwisko>
+				<telefon>567876123</telefon>
+				<adres>
+					<kod_pocztowy>82-300</kod_pocztowy>
+					<miasto>Elbląg</miasto>
+					<ulica>Browarna</ulica>
+					<nr_klatki>1</nr_klatki>
+					<nr_mieszkania>20</nr_mieszkania>
+				</adres>
+			</dane_osobowe>
+		</zamówienie>
+		<zamówienie id="00002">
+			<produkt>
+				<id>gra03</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>kla02</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<dane_osobowe>
+				<imie>Taj</imie>
+				<nazwisko>Badalambadad</nazwisko>
+				<telefon>876543123</telefon>
+				<adres>
+					<kod_pocztowy>80-724</kod_pocztowy>
+					<miasto>Gdańsk</miasto>
+					<ulica>Elbląska</ulica>
+					<nr_klatki>2</nr_klatki>
+					<nr_mieszkania>55</nr_mieszkania>
+				</adres>
+			</dane_osobowe>
+		</zamówienie>
+		<zamówienie id="00003">
+			<produkt>
+				<id>gra05</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>mys01</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>slu01</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<dane_osobowe>
+				<imie>Grzegorz</imie>
+				<nazwisko>Brzęczyszczykiewicz</nazwisko>
+				<telefon>567876123</telefon>
+				<adres>
+					<kod_pocztowy>00-000</kod_pocztowy>
+					<miasto>Chrząszczyżewoszyce</miasto>
+					<ulica>Łękołody</ulica>
+					<nr_klatki>6</nr_klatki>
+					<nr_mieszkania>36</nr_mieszkania>
+				</adres>
+			</dane_osobowe>
+		</zamówienie>
+		<zamówienie id="00004">
+			<produkt>
+				<id>gra01</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>gra02</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>gra03</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>gra04</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>gra05</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>gra06</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>mys02</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt>
+				<id>slu02</id>
+				<ilosc>1</ilosc>
+			</produkt>
+			<dane_osobowe>
+				<imie>Ala</imie>
+				<nazwisko>Makotowska</nazwisko>
+				<telefon>666666666</telefon>
+				<adres>
+					<kod_pocztowy>80-171</kod_pocztowy>
+					<miasto>Gdańsk</miasto>
+					<ulica>Cygańska Góra</ulica>
+					<nr_klatki>3</nr_klatki>
+					<nr_mieszkania>21</nr_mieszkania>
+				</adres>
+			</dane_osobowe>
+		</zamówienie>
+	</zamówienia>
+</sklep_z_grami>

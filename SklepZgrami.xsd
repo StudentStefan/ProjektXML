@@ -32,4 +32,18 @@
 			<xsd:element name="gra" type="gra_typ" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
+	<xsd:complexType name="akcesoria_typ">
+		<xsd:sequence>
+			<xsd:element name="kalwiatura" type="klawiatura_typ" maxOccurs="unbounded"/>
+			<xsd:element name="mysz" type="mysz_typ" maxOccurs="unboudned"/>
+			<xsd:element name="sluchawki" type="sluchawki_typ" maxOccurs="unbouded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:comeplxType name="zamówienie_typ">
+		<xsd:sequence>
+			<xsd:element name="produkt" type="produkt_typ" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="dane_osobowe" type="dane_osobowe_typ" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="id_zam" use="required"/>
+	</xsd:comeplxType>
 </xsd:schema>

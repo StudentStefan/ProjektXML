@@ -46,4 +46,22 @@
 		</xsd:sequence>
 		<xsd:attribute name="id" type="id_zam" use="required"/>
 	</xsd:comeplxType>
+	<xsd:complexType name="gra_typ">
+		<xsd:sequence>
+			<xsd:element name="nazwa" type="nazwa_typ"/>
+			<xsd:element name="firma" type="nazwa_typ"/>
+			<xsd:element name="gatunek" type="gatunek_typ"/>
+			<xsd:element name="cena" type="cena_typ"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="id_gry" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="klawiatura_typ">
+		<xsd:sequence>
+			<xsd:element name="nazwa" type="nazwa_typ"/>
+			<xsd:element name="typ" type="typ_typ"/>
+			<xsd:element name="kabel" type="kabel_typ"/>
+			<xsd:element name="firma" type="nazwa_typ"/>
+			<xsd:element name="cena" type="cena_typ"/>
+		</xsd:sequence>
+	</xsd:complexType>
 </xsd:schema>

@@ -2,7 +2,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 	<xsd:element name="sklep_z_grami" type="sklep_typ">
 		<xsd:key name="kluczyk">
-			<xsd:selector xpath="sklep_z_grami/produkty//."/>
+			<xsd:selector xpath="produkty/akcesoria/mysz |  produkty/akcesoria/klawiatura | produkty/akcesoria/sluchawki | produkty/gry/gra"/>
 			<xsd:field xpath="@id"/>                  
 		</xsd:key>
 		<xsd:keyref name="kluczyk_ref" refer="kluczyk">
@@ -34,18 +34,18 @@
 	</xsd:complexType>
 	<xsd:complexType name="akcesoria_typ">
 		<xsd:sequence>
-			<xsd:element name="kalwiatura" type="klawiatura_typ" maxOccurs="unbounded"/>
-			<xsd:element name="mysz" type="mysz_typ" maxOccurs="unboudned"/>
-			<xsd:element name="sluchawki" type="sluchawki_typ" maxOccurs="unbouded"/>
+			<xsd:element name="klawiatura" type="klawiatura_typ" maxOccurs="unbounded"/>
+			<xsd:element name="mysz" type="mysz_typ" maxOccurs="unbounded"/>
+			<xsd:element name="sluchawki" type="sluchawki_typ" maxOccurs="unbounded"/>
 		</xsd:sequence>
 	</xsd:complexType>
-	<xsd:comeplxType name="zamówienie_typ">
+	<xsd:complexType name="zamówienie_typ">
 		<xsd:sequence>
 			<xsd:element name="produkt" type="produkt_typ" minOccurs="1" maxOccurs="unbounded"/>
 			<xsd:element name="dane_osobowe" type="dane_osobowe_typ" minOccurs="1" maxOccurs="1"/>
 		</xsd:sequence>
 		<xsd:attribute name="id" type="id_zam" use="required"/>
-	</xsd:comeplxType>
+	</xsd:complexType>
 	<xsd:complexType name="gra_typ">
 		<xsd:sequence>
 			<xsd:element name="nazwa" type="nazwa_typ"/>
@@ -58,10 +58,156 @@
 	<xsd:complexType name="klawiatura_typ">
 		<xsd:sequence>
 			<xsd:element name="nazwa" type="nazwa_typ"/>
-			<xsd:element name="typ" type="typ_typ"/>
+			<xsd:element name="typ" type="klawiatura_typ_typ"/>
 			<xsd:element name="kabel" type="kabel_typ"/>
 			<xsd:element name="firma" type="nazwa_typ"/>
 			<xsd:element name="cena" type="cena_typ"/>
 		</xsd:sequence>
+		<xsd:attribute name="id" type="id_klawiatura" use="required"/>
 	</xsd:complexType>
+	<xsd:complexType name="mysz_typ">
+		<xsd:sequence>
+			<xsd:element name="nazwa" type="nazwa_typ"/>
+			<xsd:element name="typ" type="mysz_typ_typ"/>
+			<xsd:element name="kabel" type="kabel_typ"/>
+			<xsd:element name="firma" type="nazwa_typ"/>
+			<xsd:element name="cena" type="cena_typ"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="id_mysz" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="sluchawki_typ">
+		<xsd:sequence>
+			<xsd:element name="nazwa" type="nazwa_typ"/>
+			<xsd:element name="firma" type="nazwa_typ"/>
+			<xsd:element name="cena" type="cena_typ"/>
+		</xsd:sequence>
+		<xsd:attribute name="id" type="id_sluchawki" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType name="produkt_typ">
+		<xsd:sequence>
+			<xsd:element name="id" type="produkt_id_typ"/>
+			<xsd:element name="ilosc" type="ilosc_typ"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="dane_osobowe_typ">
+		<xsd:sequence>
+			<xsd:element name="imie" type="nazwa_typ"/>
+			<xsd:element name="nazwisko" type="nazwa_typ"/>
+			<xsd:element name="telefon" type="telefon_typ"/>
+			<xsd:element name="adres" type="adres_typ"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="adres_typ">
+		<xsd:sequence>
+			<xsd:element name="kod_pocztowy" type="kod_pocztowy_typ"/>
+			<xsd:element name="miasto" type="nazwa_typ"/>
+			<xsd:element name="ulica" type="nazwa_typ"/>
+			<xsd:element name="nr_klatki" type="nr_typ"/>
+			<xsd:element name="nr_mieszkania" type="nr_typ"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="nazwa_typ">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:complexType name="cena_typ">
+		<xsd:simpleContent>
+			<xsd:extension base="cena_pomoc_typ">
+				<xsd:attribute name="waluta" type="waluta_typ"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="cena_pomoc_typ">
+       <xsd:restriction base="xsd:decimal">
+			<xsd:fractionDigits value="2"/>
+		</xsd:restriction>
+    </xsd:simpleType>
+	<xsd:simpleType name="klawiatura_typ_typ">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="membranowa" />
+			<xsd:enumeration value="mechaniczna" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="mysz_typ_typ">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="mechaniczna" />
+			<xsd:enumeration value="laserowa" />
+		</xsd:restriction>
+	</xsd:simpleType>
+		<xsd:simpleType name="gatunek_typ">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="RPG" />
+			<xsd:enumeration value="jRPG" />
+			<xsd:enumeration value="sportowa" />
+			<xsd:enumeration value="strategia" />
+		</xsd:restriction>
+	</xsd:simpleType>
+		<xsd:complexType name="kabel_typ">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:decimal">
+				<xsd:attribute name="miara" type="miara_typ"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="produkt_id_typ">
+		<xsd:restriction base="xsd:string">
+			
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="nr_typ">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minExclusive value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ilosc_typ">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="telefon_typ">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0-9]{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="kod_pocztowy_typ">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-9]{2}[-][0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="waluta_typ">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="zl" />
+			<xsd:enumeration value="USD" />
+			<xsd:enumeration value="euro" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="miara_typ">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="m" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="id_klawiatura">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="kla[0-9]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="id_mysz">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="mys[0-9]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="id_sluchawki">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="slu[0-9]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="id_gry">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="gra[0-9]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="id_zam">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[0-9]{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
 </xsd:schema>

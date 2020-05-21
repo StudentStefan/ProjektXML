@@ -9,7 +9,7 @@
 				<cena waluta="zl">149.99</cena>
 			</gra>
 			<gra id="gra02">
-				<nazwa>Mount & Blade II: Bannerlord</nazwa>
+				<nazwa>Mount and Blade II: Bannerlord</nazwa>
 				<firma>TaleWorlds Entertainment</firma>
 				<gatunek>RPG</gatunek>
 				<cena waluta="zl">179.99</cena>
@@ -29,14 +29,14 @@
 			<gra id="gra05">
 				<nazwa>NBA 2K20</nazwa>
 				<firma>Visual Concepts</firma>
-				<gatunek>Sportowa</gatunek>
+				<gatunek>sportowa</gatunek>
 				<cena waluta="euro">59.99</cena>
 			</gra>
 			<gra id="gra06">
 				<nazwa>Gears Tactics</nazwa>
 				<firma>Splash Damage</firma>
-				<gatunek>Strategia</gatunek>
-				<cena waluta="USD">‎59.99</cena>
+				<gatunek>strategia</gatunek>
+				<cena waluta="USD">59</cena>
 			</gra>
 		</gry>
 		<akcesoria>
@@ -63,20 +63,19 @@
 			</mysz>
 			<mysz id="mys02">
 				<nazwa>G102 Prodigy</nazwa>
-				<typ>Laserowa</typ>
+				<typ>laserowa</typ>
+				<kabel miara="m">2</kabel>
 				<firma>Logitech</firma>
 				<cena waluta="zl">99.99</cena>
 			</mysz>
 			<sluchawki id="slu01">
 				<nazwa>E65BTNC</nazwa>
 				<firma>JBL</firma>
-				<pasmo_przenoszenia>20 - 20000</pasmo_przenoszenia>
 				<cena waluta="zl">359</cena>
 			</sluchawki>
 			<sluchawki id="slu02">
 				<nazwa>MDR-ZX330BT</nazwa>
 				<firma>Sony</firma>
-				<pasmo_przenoszenia>20 - 20000</pasmo_przenoszenia>
 				<cena waluta="zl">179</cena>
 			</sluchawki>
 		</akcesoria>
@@ -178,7 +177,7 @@
 				<ilosc>1</ilosc>
 			</produkt>
 			<produkt>
-				<id>mys02</id>
+				<id>mys0jdskj</id>
 				<ilosc>1</ilosc>
 			</produkt>
 			<produkt>

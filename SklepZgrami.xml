@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sklep_z_grami SYSTEM "SklepZgrami.dtd">
 <sklep_z_grami>
 	<produkty>
 		<gry>
@@ -81,13 +82,11 @@
 		</akcesoria>
 	</produkty>
 	<zamówienia>
-		<zamówienie id="00001">
-			<produkt>
-				<id>gra01</id>
+		<zamówienie id_zam="z00001">
+			<produkt id="gra01">
 				<ilosc>2</ilosc>
 			</produkt>
-			<produkt>
-				<id>kla01</id>
+			<produkt id="kla01">
 				<ilosc>1</ilosc>
 			</produkt>
 			<dane_osobowe>
@@ -103,13 +102,11 @@
 				</adres>
 			</dane_osobowe>
 		</zamówienie>
-		<zamówienie id="00002">
-			<produkt>
-				<id>gra03</id>
+		<zamówienie id_zam="z00002">
+			<produkt id="gra03">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>kla02</id>
+			<produkt id="kla02">
 				<ilosc>1</ilosc>
 			</produkt>
 			<dane_osobowe>
@@ -125,17 +122,14 @@
 				</adres>
 			</dane_osobowe>
 		</zamówienie>
-		<zamówienie id="00003">
-			<produkt>
-				<id>gra05</id>
+		<zamówienie id_zam="z00003">
+			<produkt id="gra05">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>mys01</id>
+			<produkt id="mys01">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>slu01</id>
+			<produkt id="slu01">
 				<ilosc>1</ilosc>
 			</produkt>
 			<dane_osobowe>
@@ -151,37 +145,32 @@
 				</adres>
 			</dane_osobowe>
 		</zamówienie>
-		<zamówienie id="00004">
-			<produkt>
-				<id>gra01</id>
+		<zamówienie id_zam="z00004">
+			<produkt id="gra01">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>gra02</id>
+			<produkt id="gra02">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>gra03</id>
+			<produkt id="gra03">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>gra04</id>
+			<produkt id="gra04">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>gra05</id>
+			<produkt id="gra05">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>gra06</id>
+			<produkt id="gra06">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>mys0jdskj</id>
+			<produkt id="mys01">
 				<ilosc>1</ilosc>
 			</produkt>
-			<produkt>
-				<id>slu02</id>
+			<produkt id="slu02">
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt id="kla01">
 				<ilosc>1</ilosc>
 			</produkt>
 			<dane_osobowe>
@@ -194,6 +183,26 @@
 					<ulica>Cygańska Góra</ulica>
 					<nr_klatki>3</nr_klatki>
 					<nr_mieszkania>21</nr_mieszkania>
+				</adres>
+			</dane_osobowe>
+		</zamówienie>
+		<zamówienie id_zam="z00005">
+			<produkt id="gra01">
+				<ilosc>1</ilosc>
+			</produkt>
+			<produkt id="slu01">
+				<ilosc>1</ilosc>
+			</produkt>
+			<dane_osobowe>
+				<imie>Kasia</imie>
+				<nazwisko>Kowalska</nazwisko>
+				<telefon>926105498</telefon>
+				<adres>
+					<kod_pocztowy>80-724</kod_pocztowy>
+					<miasto>Gdańsk</miasto>
+					<ulica>Jaśkowa Dolina</ulica>
+					<nr_klatki>6</nr_klatki>
+					<nr_mieszkania>5</nr_mieszkania>
 				</adres>
 			</dane_osobowe>
 		</zamówienie>

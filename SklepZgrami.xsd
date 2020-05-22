@@ -7,7 +7,7 @@
 		</xsd:key>
 		<xsd:keyref name="kluczyk_ref" refer="kluczyk">
 			<xsd:selector xpath="sklep_z_grami/zamówienia/zamówienie/produkt"/>
-			<xsd:field xpath="id"/>
+			<xsd:field xpath="@id"/>
 		</xsd:keyref>
 	</xsd:element>
 	<xsd:complexType name="sklep_typ">
@@ -44,7 +44,7 @@
 			<xsd:element name="produkt" type="produkt_typ" minOccurs="1" maxOccurs="unbounded"/>
 			<xsd:element name="dane_osobowe" type="dane_osobowe_typ" minOccurs="1" maxOccurs="1"/>
 		</xsd:sequence>
-		<xsd:attribute name="id" type="id_zam" use="required"/>
+		<xsd:attribute name="id_zam" type="id_zam_typ" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="gra_typ">
 		<xsd:sequence>
@@ -85,9 +85,9 @@
 	</xsd:complexType>
 	<xsd:complexType name="produkt_typ">
 		<xsd:sequence>
-			<xsd:element name="id" type="produkt_id_typ"/>
 			<xsd:element name="ilosc" type="ilosc_typ"/>
 		</xsd:sequence>
+		<xsd:attribute name="id" type="produkt_id_typ" use="required"/>
 	</xsd:complexType>
 	<xsd:complexType name="dane_osobowe_typ">
 		<xsd:sequence>
@@ -205,9 +205,9 @@
 			<xsd:pattern value="gra[0-9]+"/>
 		</xsd:restriction>
 	</xsd:simpleType>
-	<xsd:simpleType name="id_zam">
-		<xsd:restriction base="xsd:integer">
-			<xsd:pattern value="[0-9]{5}"/>
+	<xsd:simpleType name="id_zam_typ">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="z[0-9]{5}"/>
 		</xsd:restriction>
 	</xsd:simpleType>
 </xsd:schema>

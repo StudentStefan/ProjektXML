@@ -1,0 +1,45 @@
+<!ELEMENT sklep_z_grami (produkty,zamówienia)>
+<!ELEMENT produkty (gry,akcesoria)>
+<!ELEMENT gry (gra+)>
+<!ELEMENT akcesoria (klawiatura+,mysz+,sluchawki+)>
+<!ELEMENT zamówienia (zamówienie+)>
+
+<!ELEMENT gra (nazwa,firma,gatunek,cena)>
+<!ELEMENT nazwa (#PCDATA)>
+<!ELEMENT firma (#PCDATA)>
+<!ELEMENT gatunek (#PCDATA)>
+<!ELEMENT cena (#PCDATA)>
+<!ATTLIST cena waluta (zl|USD|euro) "zl">
+<!ATTLIST gra id ID #REQUIRED>
+
+<!ELEMENT klawiatura (nazwa,typ,kabel,firma,cena)>
+<!ELEMENT typ (#PCDATA)>
+<!ELEMENT kabel (#PCDATA)>
+<!ATTLIST kabel miara CDATA #REQUIRED>
+<!ATTLIST klawiatura id ID #REQUIRED>
+
+<!ELEMENT mysz (nazwa,typ,kabel,firma,cena)>
+<!ATTLIST mysz id ID #REQUIRED>
+
+<!ELEMENT sluchawki (nazwa,firma,cena)>
+<!ATTLIST sluchawki id ID #REQUIRED>
+
+<!ELEMENT zamówienie (produkt+,dane_osobowe)>
+<!ELEMENT produkt (ilosc)>
+<!ATTLIST produkt id IDREF #REQUIRED>
+<!ATTLIST zamówienie id_zam ID #REQUIRED>
+
+<!ELEMENT ilosc (#PCDATA)>
+
+
+<!ELEMENT dane_osobowe (imie,nazwisko,telefon,adres)>
+<!ELEMENT imie (#PCDATA)>
+<!ELEMENT nazwisko (#PCDATA)>
+<!ELEMENT telefon (#PCDATA)>
+
+<!ELEMENT adres (kod_pocztowy,miasto,ulica,nr_klatki,nr_mieszkania)>
+<!ELEMENT kod_pocztowy (#PCDATA)>
+<!ELEMENT miasto (#PCDATA)>
+<!ELEMENT ulica (#PCDATA)>
+<!ELEMENT nr_klatki (#PCDATA)>
+<!ELEMENT nr_mieszkania (#PCDATA)>

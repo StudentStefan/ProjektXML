@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sklep_z_grami SYSTEM "SklepZgrami.dtd">
+<?xml-stylesheet type="text/css" href="SklepZgrami.css"?> 
+<!--<!DOCTYPE sklep_z_grami SYSTEM "SklepZgrami.dtd">-->
 <sklep_z_grami>
 	<produkty>
 		<gry>

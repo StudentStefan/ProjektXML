@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
-xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:exsl="http://exslt.org/common"
+extension-element-prefixes="exsl">
 <xsl:output method="html"/>
 <xsl:key name="klucz_do_produktu" match="sklep_z_grami/produkty/gry/gra | sklep_z_grami/produkty/akcesoria/klawiatura |sklep_z_grami/produkty/akcesoria/mysz |sklep_z_grami/produkty/akcesoria/sluchawki" use="@id"/>
 <xsl:template match="/">
@@ -128,6 +130,16 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<div class="zamówienia">
 		<xsl:for-each select="./zamówienie">
 			<p1>Zamówienie nr: <xsl:value-of select="@id_zam"/></p1>
+			<xsl:variable name="cena_łącznie">
+				 <xsl:for-each select="./produkt">
+					 <xsl:variable name="cen_zl" >
+						<xsl:apply-templates select="key('klucz_do_produktu',@id)/cena" mode="zl"/>
+					</xsl:variable>
+					<number>
+						<xsl:value-of select="$cen_zl*ilosc"/>
+					</number>
+				</xsl:for-each>
+			</xsl:variable>
 			<table>
 				<tr>
 					<th>Produkt typ</th>
@@ -137,24 +149,23 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 					<th>cena sztuka</th>
 					<th>cena łącznie</th>
 				</tr>
-				<xsl:for-each select="key('klucz_do_produktu',@id)">
-					<xsl:variable name="pomoc" >
-						<xsl:apply-templates select="./cena" mode="zl"/>
+				<xsl:for-each select="./produkt">
+					<xsl:variable name="cena_zl" >
+						<xsl:apply-templates select="key('klucz_do_produktu',@id)/cena" mode="zl"/>
 					</xsl:variable>
 					<tr>
 						<td><xsl:if test="substring(@id,1,3)='gra'">gra</xsl:if><xsl:if test="substring(@id,1,3)='kla'">klawiatura</xsl:if><xsl:if test="substring(@id,1,3)='slu'">słuchawki</xsl:if><xsl:if test="substring(@id,1,3)='mys'">mysz</xsl:if></td>
-						<td><xsl:value-of select="./nazwa"/></td>
-						<td><xsl:value-of select="./firma"/></td>
-						<td><xsl:value-of select="zamówienie/ilosc"/></td>
-						<td><xsl:value-of select="$pomoc"/></td>
-						<td><xsl:value-of select="$pomoc*zamówienie/ilosc"/></td>
+						<td><xsl:value-of select="key('klucz_do_produktu',@id)/nazwa"/></td>
+						<td><xsl:value-of select="key('klucz_do_produktu',@id)/firma"/></td>
+						<td><xsl:value-of select="ilosc"/></td>
+						<td><xsl:value-of select="$cena_zl"/></td>
+						<td><xsl:value-of select="$cena_zl*ilosc"/></td>
 					</tr>
-				
 				</xsl:for-each>
 				
 			
 			</table>
-		
+		<p>łącznie do zapłaty <xsl:value-of select="sum(exsl:node-set($cena_łącznie)/number)"/></p>
 		</xsl:for-each>
 	</div>
 

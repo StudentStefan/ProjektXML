@@ -41,9 +41,9 @@ extension-element-prefixes="exsl">
 	<h2>Gry</h2>
 	 <div class="Filtry">
        <h4>Filtry</h4>
-        Nazwa: <input type="text" id="szukaj_gry_nazwa" onkeyup="szukaj_gry_Nazwa()" placeholder="Podaj nazwę" title="szukaj w grach"/>
-        Gatunek: <input type="text" id="szukaj_gry_gatunek" onkeyup="szukaj_gry_Gatunek()" placeholder="Podaj gatunek" title="szukaj w grach"/>
-        Firma: <input type="text" id="szukaj_gry_firma" onkeyup="szukaj_gry_Firma()" placeholder="Podaj nazwę fimry" title="szukaj w grach"/>
+        Nazwa: <input type="text" id="szukaj_gry_nazwa" onkeyup="szukaj_Gry()" placeholder="Podaj nazwę" title="szukaj w grach"/>
+        Gatunek: <input type="text" id="szukaj_gry_gatunek" onkeyup="szukaj_Gry()" placeholder="Podaj gatunek" title="szukaj w grach"/>
+        Firma: <input type="text" id="szukaj_gry_firma" onkeyup="szukaj_Gry()" placeholder="Podaj nazwę fimry" title="szukaj w grach"/>
      </div>
      
 	<table id="gry_tab">
@@ -93,7 +93,7 @@ extension-element-prefixes="exsl">
 		</xsl:for-each>
 	</table>
 	<h3>Myszki</h3>
-	<button id="block_button" onclick="blokuj()">Blokuj</button> 
+	
 	<table id="mysz_tab">
 		<tr>
 			<th>Nazwa</th>
@@ -121,6 +121,8 @@ extension-element-prefixes="exsl">
         Firma: <input type="text" id="firma_sluchawki" placeholder="Podaj firmę" title="Nadaj firmę"/>
         Cena zl: <input type="number" id="cena_sluchawki" placeholder="Podaj cenę" title="Nadaj cenę" min="0.22" step="0.01"/>
         <button onclick="dodajSłuchawki()">Dodaj</button> 
+        	Nr Kolumny <input type="number" id="rzad_sluchawki" placeholder="Podaj rząd" title="Zmień rząd" min="1" step="1"/>
+		<button id="update_button" onclick="update()">Update</button> 
 	<table id="sluchawki_tab">
 		<tr>
 			<th>Nazwa</th>

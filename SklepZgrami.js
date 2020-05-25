@@ -60,27 +60,40 @@ function dodajSłuchawki(){
 		kolumna_cena_euro.innerHTML=(cena*0.22).toFixed(2);
 	}
 }
-function blokuj(){
-	var przycisk=document.getElementById("block_button");
-	var tablica=document.getElementById("mysz_tab");
-	var tr = tablica.getElementsByTagName("tr");
-	if(przycisk.innerHTML=="Blokuj"){
-		for (i = 1; i < tr.length; i++) {
-			tr[i].onclick=null;
+function update(){
+	var nazwa,firma,cena,tabela,rzad,kolmuna_nazwa,kolumna_firma,kolumna_cena_zl,kolumna_cena_USD,kolumna_cena_euro;
+	nazwa=document.getElementById("nazwa_sluchawki").value;
+	firma=document.getElementById("firma_sluchawki").value;
+	cena=document.getElementById("cena_sluchawki").value;
+	tabela=document.getElementById("sluchawki_tab");
+	var nr=document.getElementById("rzad_sluchawki").value;
+	var rzedy=tabela.getElementsByTagName("tr");
+	if (tabela.rows.length-1<nr){
+		alert("Nie ma takiego rzędu");
+	}else{
+		if(nazwa.length!=0){
+			rzedy[nr].deleteCell(0);
+			var komorka_naz=rzedy[nr].insertCell(0);
+			komorka_naz.innerHTML=nazwa;
 		}
-		przycisk.innerHTML="Odblokuj";
-	}
-	else{
-		przycisk.innerHTML="Blokuj";
-		for (i = 1; i < tr.length; i++) {
-			tr[i].onclick=update_mysz;
+		if(firma.length!=0){
+			rzedy[nr].deleteCell(1);
+			var komorka_naz=rzedy[nr].insertCell(1);
+			komorka_naz.innerHTML=firma;
 		}
+		if(cena.length!=0){
+			rzedy[nr].deleteCell(4);
+			rzedy[nr].deleteCell(3);
+			rzedy[nr].deleteCell(2);
+			var komorka_cena1=rzedy[nr].insertCell(2);
+			var komorka_cena2=rzedy[nr].insertCell(3);
+			var komorka_cena3=rzedy[nr].insertCell(4);
+			komorka_cena1.innerHTML=cena;
+			komorka_cena2.innerHTML=(cena*0.24).toFixed(2);
+			komorka_cena3.innerHTML=(cena*0.22).toFixed(2);
+		}
+		
 	}
 }
-function update_mysz(){
 
-	
-		alert("MYSZ ATAKUJE");
-	
-}
 	

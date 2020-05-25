@@ -15,17 +15,17 @@
                <h4>Filtry</h4>
         Nazwa: <input type="text"
                       id="szukaj_gry_nazwa"
-                      onkeyup="szukaj_gry_Nazwa()"
+                      onkeyup="szukaj_Gry()"
                       placeholder="Podaj nazwę"
                       title="szukaj w grach"/>
         Gatunek: <input type="text"
                       id="szukaj_gry_gatunek"
-                      onkeyup="szukaj_gry_Gatunek()"
+                      onkeyup="szukaj_Gry()"
                       placeholder="Podaj gatunek"
                       title="szukaj w grach"/>
         Firma: <input type="text"
                       id="szukaj_gry_firma"
-                      onkeyup="szukaj_gry_Firma()"
+                      onkeyup="szukaj_Gry()"
                       placeholder="Podaj nazwę fimry"
                       title="szukaj w grach"/>
             </div>
@@ -121,7 +121,6 @@
                </tr>
             </table>
             <h3>Myszki</h3>
-            <button id="block_button" onclick="blokuj()">Blokuj</button>
             <table id="mysz_tab">
                <tr>
                   <th>Nazwa</th>
@@ -166,7 +165,14 @@
                    title="Nadaj cenę"
                    min="0.22"
                    step="0.01"/>
-            <button onclick="dodajSłuchawki()">Dodaj</button>
+            <button onclick="dodajSłuchawki()">Dodaj</button> 
+        	Nr Kolumny <input type="number"
+                   id="rzad_sluchawki"
+                   placeholder="Podaj rząd"
+                   title="Zmień rząd"
+                   min="1"
+                   step="1"/>
+            <button id="update_button" onclick="update()">Update</button>
             <table id="sluchawki_tab">
                <tr>
                   <th>Nazwa</th>

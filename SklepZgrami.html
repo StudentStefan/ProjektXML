@@ -1,0 +1,432 @@
+
+
+<html>
+   <link rel="stylesheet" type="text/css" href="SklepZgrami.css"/>
+   <head>
+      <title>Sklep Z Grami</title>
+   </head>
+   <body>
+      <h2>Sklep Z Grami</h2>
+      <div class="produkty">
+         <h1>Produkty</h1>
+         <div class="gry">
+            <h2>Gry</h2>
+            <div class="Filtry">
+               <h4>Filtry</h4>
+        Nazwa: <input type="text"
+                      id="szukaj_gry_nazwa"
+                      onkeyup="szukaj_gry_Nazwa()"
+                      placeholder="Podaj nazwę"
+                      title="szukaj w grach"/>
+        Gatunek: <input type="text"
+                      id="szukaj_gry_gatunek"
+                      onkeyup="szukaj_gry_Gatunek()"
+                      placeholder="Podaj gatunek"
+                      title="szukaj w grach"/>
+        Firma: <input type="text"
+                      id="szukaj_gry_firma"
+                      onkeyup="szukaj_gry_Firma()"
+                      placeholder="Podaj nazwę fimry"
+                      title="szukaj w grach"/>
+            </div>
+            <table id="gry_tab">
+               <tr>
+                  <th>nazwa</th>
+                  <th>firma</th>
+                  <th>gatunek</th>
+                  <th>cena zl</th>
+                  <th>cena USD</th>
+                  <th>cena euro</th>
+               </tr>
+               <tr>
+                  <td>Disgaea 5</td>
+                  <td>Nippon Ichi Software</td>
+                  <td>jRPG</td>
+                  <td>149.99</td>
+                  <td>36.00</td>
+                  <td>33.00</td>
+               </tr>
+               <tr>
+                  <td>Mount and Blade II: Bannerlord</td>
+                  <td>TaleWorlds Entertainment</td>
+                  <td>RPG</td>
+                  <td>179.99</td>
+                  <td>43.20</td>
+                  <td>39.60</td>
+               </tr>
+               <tr>
+                  <td>The Witcher 3: Wild Hunt</td>
+                  <td>CD PROJEKT RED</td>
+                  <td>RPG</td>
+                  <td>99.99</td>
+                  <td>24.00</td>
+                  <td>22.00</td>
+               </tr>
+               <tr>
+                  <td>Cyberpunk 2077</td>
+                  <td>CD PROJEKT RED</td>
+                  <td>RPG</td>
+                  <td>149.99</td>
+                  <td>36.00</td>
+                  <td>33.00</td>
+               </tr>
+               <tr>
+                  <td>NBA 2K20</td>
+                  <td>Visual Concepts</td>
+                  <td>sportowa</td>
+                  <td>271.15</td>
+                  <td>65.39</td>
+                  <td>59.99</td>
+               </tr>
+               <tr>
+                  <td>Gears Tactics</td>
+                  <td>Splash Damage</td>
+                  <td>strategia</td>
+                  <td>244.26</td>
+                  <td>59</td>
+                  <td>54.28</td>
+               </tr>
+            </table>
+         </div>
+         <div class="akcesoria">
+            <h2>Akcesoria</h2>
+            <h3>Klawiatury</h3>
+            <table id="klawiatury">
+               <tr>
+                  <th>Nazwa</th>
+                  <th>Typ</th>
+                  <th>Długość kabla</th>
+                  <th>Firma</th>
+                  <th>Cena zl</th>
+                  <th>Cena USD</th>
+                  <th>Cena euro</th>
+               </tr>
+               <tr>
+                  <td>GK900 RGB</td>
+                  <td>mechaniczna</td>
+                  <td>2m</td>
+                  <td>MAD DOG</td>
+                  <td>199</td>
+                  <td>47.76</td>
+                  <td>43.78</td>
+               </tr>
+               <tr>
+                  <td>Rhod 400 RGB</td>
+                  <td>membranowa</td>
+                  <td>2m</td>
+                  <td>GENESIS</td>
+                  <td>79.04</td>
+                  <td>18.97</td>
+                  <td>17.39</td>
+               </tr>
+            </table>
+            <h3>Myszki</h3>
+            <button id="block_button" onclick="blokuj()">Blokuj</button>
+            <table id="mysz_tab">
+               <tr>
+                  <th>Nazwa</th>
+                  <th>Typ</th>
+                  <th>Długość kabla</th>
+                  <th>Firma</th>
+                  <th>Cena zl</th>
+                  <th>Cena USD</th>
+                  <th>Cena euro</th>
+               </tr>
+               <tr onclick="update_mysz()">
+                  <td>Defender Cyber MB-560L</td>
+                  <td>mechaniczna</td>
+                  <td>1.5m</td>
+                  <td>LAMA </td>
+                  <td>20</td>
+                  <td>4.80</td>
+                  <td>4.40</td>
+               </tr>
+               <tr onclick="update_mysz()">
+                  <td>G102 Prodigy</td>
+                  <td>laserowa</td>
+                  <td>2m</td>
+                  <td>Logitech</td>
+                  <td>99.99</td>
+                  <td>24.00</td>
+                  <td>22.00</td>
+               </tr>
+            </table>
+            <h3>Słuchawki</h3>
+	 Nazwa: <input type="text"
+                   id="nazwa_sluchawki"
+                   placeholder="Podaj nazwę"
+                   title="Nadaj nazwę"/>
+        Firma: <input type="text"
+                   id="firma_sluchawki"
+                   placeholder="Podaj firmę"
+                   title="Nadaj firmę"/>
+        Cena zl: <input type="number"
+                   id="cena_sluchawki"
+                   placeholder="Podaj cenę"
+                   title="Nadaj cenę"
+                   min="0.22"
+                   step="0.01"/>
+            <button onclick="dodajSłuchawki()">Dodaj</button>
+            <table id="sluchawki_tab">
+               <tr>
+                  <th>Nazwa</th>
+                  <th>Firma</th>
+                  <th>Cena zl</th>
+                  <th>Cena USD</th>
+                  <th>Cena euro</th>
+               </tr>
+               <tr>
+                  <td>E65BTNC</td>
+                  <td>JBL</td>
+                  <td>359</td>
+                  <td>86.16</td>
+                  <td>78.98</td>
+               </tr>
+               <tr>
+                  <td>MDR-ZX330BT</td>
+                  <td>Sony</td>
+                  <td>179</td>
+                  <td>42.96</td>
+                  <td>39.38</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <div clas="zamówienia">
+         <div class="zamówienia">
+            <h2>Zamówienia</h2>
+		Usuń zamówienie nr:<input type="text"
+                   id="szukaj_zamowienie"
+                   placeholder="Podaj nazwę"
+                   title="usuń zamówienie"/>
+            <button onclick="usunZamowienie()">Usuń</button>
+            <p id="z00001p">Zamówienie nr:z00001</p>
+            <table id="z00001">
+               <tr>
+                  <th>Produkt typ</th>
+                  <th>Nazwa</th>
+                  <th>Firma</th>
+                  <th>Ilość</th>
+                  <th>Cena sztuka</th>
+                  <th>Cena łącznie</th>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>Disgaea 5</td>
+                  <td>Nippon Ichi Software</td>
+                  <td>2</td>
+                  <td>149.99</td>
+                  <td>299.98</td>
+               </tr>
+               <tr>
+                  <td>klawiatura</td>
+                  <td>GK900 RGB</td>
+                  <td>MAD DOG</td>
+                  <td>1</td>
+                  <td>199</td>
+                  <td>199</td>
+               </tr>
+               <tr>
+                  <th>Łącznie do zapłaty</th>
+                  <td>498.98zl</td>
+               </tr>
+            </table>
+            <p id="z00002p">Zamówienie nr:z00002</p>
+            <table id="z00002">
+               <tr>
+                  <th>Produkt typ</th>
+                  <th>Nazwa</th>
+                  <th>Firma</th>
+                  <th>Ilość</th>
+                  <th>Cena sztuka</th>
+                  <th>Cena łącznie</th>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>The Witcher 3: Wild Hunt</td>
+                  <td>CD PROJEKT RED</td>
+                  <td>1</td>
+                  <td>99.99</td>
+                  <td>99.99</td>
+               </tr>
+               <tr>
+                  <td>klawiatura</td>
+                  <td>Rhod 400 RGB</td>
+                  <td>GENESIS</td>
+                  <td>1</td>
+                  <td>79.04</td>
+                  <td>79.04</td>
+               </tr>
+               <tr>
+                  <th>Łącznie do zapłaty</th>
+                  <td>179.03zl</td>
+               </tr>
+            </table>
+            <p id="z00003p">Zamówienie nr:z00003</p>
+            <table id="z00003">
+               <tr>
+                  <th>Produkt typ</th>
+                  <th>Nazwa</th>
+                  <th>Firma</th>
+                  <th>Ilość</th>
+                  <th>Cena sztuka</th>
+                  <th>Cena łącznie</th>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>NBA 2K20</td>
+                  <td>Visual Concepts</td>
+                  <td>1</td>
+                  <td>271.15</td>
+                  <td>271.15</td>
+               </tr>
+               <tr>
+                  <td>mysz</td>
+                  <td>Defender Cyber MB-560L</td>
+                  <td>LAMA </td>
+                  <td>1</td>
+                  <td>20</td>
+                  <td>20</td>
+               </tr>
+               <tr>
+                  <td>słuchawki</td>
+                  <td>E65BTNC</td>
+                  <td>JBL</td>
+                  <td>1</td>
+                  <td>359</td>
+                  <td>359</td>
+               </tr>
+               <tr>
+                  <th>Łącznie do zapłaty</th>
+                  <td>650.15zl</td>
+               </tr>
+            </table>
+            <p id="z00004p">Zamówienie nr:z00004</p>
+            <table id="z00004">
+               <tr>
+                  <th>Produkt typ</th>
+                  <th>Nazwa</th>
+                  <th>Firma</th>
+                  <th>Ilość</th>
+                  <th>Cena sztuka</th>
+                  <th>Cena łącznie</th>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>Disgaea 5</td>
+                  <td>Nippon Ichi Software</td>
+                  <td>1</td>
+                  <td>149.99</td>
+                  <td>149.99</td>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>Mount and Blade II: Bannerlord</td>
+                  <td>TaleWorlds Entertainment</td>
+                  <td>1</td>
+                  <td>179.99</td>
+                  <td>179.99</td>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>The Witcher 3: Wild Hunt</td>
+                  <td>CD PROJEKT RED</td>
+                  <td>1</td>
+                  <td>99.99</td>
+                  <td>99.99</td>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>Cyberpunk 2077</td>
+                  <td>CD PROJEKT RED</td>
+                  <td>1</td>
+                  <td>149.99</td>
+                  <td>149.99</td>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>NBA 2K20</td>
+                  <td>Visual Concepts</td>
+                  <td>1</td>
+                  <td>271.15</td>
+                  <td>271.15</td>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>Gears Tactics</td>
+                  <td>Splash Damage</td>
+                  <td>1</td>
+                  <td>244.26</td>
+                  <td>244.26</td>
+               </tr>
+               <tr>
+                  <td>mysz</td>
+                  <td>Defender Cyber MB-560L</td>
+                  <td>LAMA </td>
+                  <td>1</td>
+                  <td>20</td>
+                  <td>20</td>
+               </tr>
+               <tr>
+                  <td>słuchawki</td>
+                  <td>MDR-ZX330BT</td>
+                  <td>Sony</td>
+                  <td>1</td>
+                  <td>179</td>
+                  <td>179</td>
+               </tr>
+               <tr>
+                  <td>klawiatura</td>
+                  <td>GK900 RGB</td>
+                  <td>MAD DOG</td>
+                  <td>1</td>
+                  <td>199</td>
+                  <td>199</td>
+               </tr>
+               <tr>
+                  <th>Łącznie do zapłaty</th>
+                  <td>1493.37zl</td>
+               </tr>
+            </table>
+            <p id="z00005p">Zamówienie nr:z00005</p>
+            <table id="z00005">
+               <tr>
+                  <th>Produkt typ</th>
+                  <th>Nazwa</th>
+                  <th>Firma</th>
+                  <th>Ilość</th>
+                  <th>Cena sztuka</th>
+                  <th>Cena łącznie</th>
+               </tr>
+               <tr>
+                  <td>gra</td>
+                  <td>Disgaea 5</td>
+                  <td>Nippon Ichi Software</td>
+                  <td>1</td>
+                  <td>149.99</td>
+                  <td>149.99</td>
+               </tr>
+               <tr>
+                  <td>słuchawki</td>
+                  <td>E65BTNC</td>
+                  <td>JBL</td>
+                  <td>1</td>
+                  <td>359</td>
+                  <td>359</td>
+               </tr>
+               <tr>
+                  <th>Łącznie do zapłaty</th>
+                  <td>508.99zl</td>
+               </tr>
+            </table>
+         </div>
+      </div>
+      <footer>
+         <p>Autor: Stefan Popiołek</p>
+      </footer>
+      <script src="SklepZgrami.js">
+         <br/>
+      </script>
+   </body>
+</html>
+

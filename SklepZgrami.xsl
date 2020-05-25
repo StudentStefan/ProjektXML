@@ -7,6 +7,7 @@ extension-element-prefixes="exsl">
 <xsl:key name="klucz_do_produktu" match="sklep_z_grami/produkty/gry/gra | sklep_z_grami/produkty/akcesoria/klawiatura |sklep_z_grami/produkty/akcesoria/mysz |sklep_z_grami/produkty/akcesoria/sluchawki" use="@id"/>
 <xsl:template match="/">
 	<html>
+		<link rel="stylesheet" type="text/css" href="SklepZgrami.css"/>
 		<head>
 			<title>Sklep Z Grami</title>
 		</head>
@@ -21,6 +22,7 @@ extension-element-prefixes="exsl">
 			<footer>
 				<p>Autor: Stefan Popiołek</p>
 			</footer>
+			<script src="SklepZgrami.js"><br/></script>
 		</body>
 	</html>
 </xsl:template>
@@ -36,8 +38,15 @@ extension-element-prefixes="exsl">
 </xsl:template>
 
 <xsl:template match="gry">
-	<h2>gry</h2>
-	<table>
+	<h2>Gry</h2>
+	 <div class="Filtry">
+       <h4>Filtry</h4>
+        Nazwa: <input type="text" id="szukaj_gry_nazwa" onkeyup="szukaj_gry_Nazwa()" placeholder="Podaj nazwę" title="szukaj w grach"/>
+        Gatunek: <input type="text" id="szukaj_gry_gatunek" onkeyup="szukaj_gry_Gatunek()" placeholder="Podaj gatunek" title="szukaj w grach"/>
+        Firma: <input type="text" id="szukaj_gry_firma" onkeyup="szukaj_gry_Firma()" placeholder="Podaj nazwę fimry" title="szukaj w grach"/>
+     </div>
+     
+	<table id="gry_tab">
 		<tr>
 			<th>nazwa</th>
 			<th>firma</th>
@@ -61,15 +70,15 @@ extension-element-prefixes="exsl">
 <xsl:template match="akcesoria">
 	<h2>Akcesoria</h2>
 	<h3>Klawiatury</h3>
-	<table>
+	<table id="klawiatury">
 		<tr>
-			<th>nazwa</th>
-			<th>typ</th>
-			<th>długość kabla</th>
-			<th>firma</th>
-			<th>cena zl</th>
-			<th>cena USD</th>
-			<th>cena euro</th>
+			<th>Nazwa</th>
+			<th>Typ</th>
+			<th>Długość kabla</th>
+			<th>Firma</th>
+			<th>Cena zl</th>
+			<th>Cena USD</th>
+			<th>Cena euro</th>
 		</tr>
 		<xsl:for-each select="./klawiatura">
 			<tr>
@@ -84,18 +93,19 @@ extension-element-prefixes="exsl">
 		</xsl:for-each>
 	</table>
 	<h3>Myszki</h3>
-	<table>
+	<button id="block_button" onclick="blokuj()">Blokuj</button> 
+	<table id="mysz_tab">
 		<tr>
-			<th>nazwa</th>
-			<th>typ</th>
-			<th>długość kabla</th>
-			<th>firma</th>
-			<th>cena zl</th>
-			<th>cena USD</th>
-			<th>cena euro</th>
+			<th>Nazwa</th>
+			<th>Typ</th>
+			<th>Długość kabla</th>
+			<th>Firma</th>
+			<th>Cena zl</th>
+			<th>Cena USD</th>
+			<th>Cena euro</th>
 		</tr>
 		<xsl:for-each select="./mysz">
-			<tr>
+			<tr onclick="update_mysz()">
 				<td><xsl:value-of select="./nazwa"/></td>
 				<td><xsl:value-of select="./typ"/></td>
 				<td><xsl:value-of select="concat(./kabel,./kabel/@miara)"/></td>
@@ -107,13 +117,17 @@ extension-element-prefixes="exsl">
 		</xsl:for-each>
 	</table>
 	<h3>Słuchawki</h3>
-	<table>
+	 Nazwa: <input type="text" id="nazwa_sluchawki" placeholder="Podaj nazwę" title="Nadaj nazwę"/>
+        Firma: <input type="text" id="firma_sluchawki" placeholder="Podaj firmę" title="Nadaj firmę"/>
+        Cena zl: <input type="number" id="cena_sluchawki" placeholder="Podaj cenę" title="Nadaj cenę" min="0.22" step="0.01"/>
+        <button onclick="dodajSłuchawki()">Dodaj</button> 
+	<table id="sluchawki_tab">
 		<tr>
-			<th>nazwa</th>
-			<th>firma</th>
-			<th>cena zl</th>
-			<th>cena USD</th>
-			<th>cena euro</th>
+			<th>Nazwa</th>
+			<th>Firma</th>
+			<th>Cena zl</th>
+			<th>Cena USD</th>
+			<th>Cena euro</th>
 		</tr>
 		<xsl:for-each select="./sluchawki">
 			<tr>
@@ -128,44 +142,53 @@ extension-element-prefixes="exsl">
 </xsl:template>
 <xsl:template match="zamówienia">
 	<div class="zamówienia">
+		<h2>Zamówienia</h2>
+		Usuń zamówienie nr:<input type="text" id="szukaj_zamowienie" placeholder="Podaj nazwę" title="usuń zamówienie"/>
+		 <button onclick="usunZamowienie()">Usuń</button> 
 		<xsl:for-each select="./zamówienie">
-			<p1>Zamówienie nr: <xsl:value-of select="@id_zam"/></p1>
-			<xsl:variable name="cena_łącznie">
-				 <xsl:for-each select="./produkt">
-					 <xsl:variable name="cen_zl" >
-						<xsl:apply-templates select="key('klucz_do_produktu',@id)/cena" mode="zl"/>
-					</xsl:variable>
-					<number>
-						<xsl:value-of select="$cen_zl*ilosc"/>
-					</number>
-				</xsl:for-each>
-			</xsl:variable>
-			<table>
-				<tr>
-					<th>Produkt typ</th>
-					<th>nazwa</th>
-					<th>firma</th>
-					<th>ilość</th>
-					<th>cena sztuka</th>
-					<th>cena łącznie</th>
-				</tr>
-				<xsl:for-each select="./produkt">
-					<xsl:variable name="cena_zl" >
-						<xsl:apply-templates select="key('klucz_do_produktu',@id)/cena" mode="zl"/>
-					</xsl:variable>
+		
+				<xsl:variable name="pomoc" select="@id_zam"/>
+				<xsl:variable name="cena_łącznie">
+					 <xsl:for-each select="./produkt">
+						 <xsl:variable name="cen_zl" >
+							<xsl:apply-templates select="key('klucz_do_produktu',@id)/cena" mode="zl"/>
+						</xsl:variable>
+						<number>
+							<xsl:value-of select="$cen_zl*ilosc"/>
+						</number>
+					</xsl:for-each>
+				</xsl:variable>
+				<p><xsl:attribute name="id" select="concat($pomoc,'p')"/>Zamówienie nr:<xsl:value-of select="$pomoc"/></p>
+				<table>
+					<xsl:attribute name="id" select="$pomoc"/>
 					<tr>
-						<td><xsl:if test="substring(@id,1,3)='gra'">gra</xsl:if><xsl:if test="substring(@id,1,3)='kla'">klawiatura</xsl:if><xsl:if test="substring(@id,1,3)='slu'">słuchawki</xsl:if><xsl:if test="substring(@id,1,3)='mys'">mysz</xsl:if></td>
-						<td><xsl:value-of select="key('klucz_do_produktu',@id)/nazwa"/></td>
-						<td><xsl:value-of select="key('klucz_do_produktu',@id)/firma"/></td>
-						<td><xsl:value-of select="ilosc"/></td>
-						<td><xsl:value-of select="$cena_zl"/></td>
-						<td><xsl:value-of select="$cena_zl*ilosc"/></td>
+						<th>Produkt typ</th>
+						<th>Nazwa</th>
+						<th>Firma</th>
+						<th>Ilość</th>
+						<th>Cena sztuka</th>
+						<th>Cena łącznie</th>
 					</tr>
-				</xsl:for-each>
-				
+					<xsl:for-each select="./produkt">
+						<xsl:variable name="cena_zl" >
+							<xsl:apply-templates select="key('klucz_do_produktu',@id)/cena" mode="zl"/>
+						</xsl:variable>
+						<tr>
+							<td><xsl:if test="substring(@id,1,3)='gra'">gra</xsl:if><xsl:if test="substring(@id,1,3)='kla'">klawiatura</xsl:if><xsl:if test="substring(@id,1,3)='slu'">słuchawki</xsl:if><xsl:if test="substring(@id,1,3)='mys'">mysz</xsl:if></td>
+							<td><xsl:value-of select="key('klucz_do_produktu',@id)/nazwa"/></td>
+							<td><xsl:value-of select="key('klucz_do_produktu',@id)/firma"/></td>
+							<td><xsl:value-of select="ilosc"/></td>
+							<td><xsl:value-of select="$cena_zl"/></td>
+							<td><xsl:value-of select="$cena_zl*ilosc"/></td>
+						</tr>
+					</xsl:for-each>
+					<tr>
+						<th>Łącznie do zapłaty</th>
+						<td> <xsl:value-of select="concat(sum(exsl:node-set($cena_łącznie)/number),'zl')"/></td>
+					</tr>
+
+				</table>
 			
-			</table>
-		<p>łącznie do zapłaty <xsl:value-of select="sum(exsl:node-set($cena_łącznie)/number)"/></p>
 		</xsl:for-each>
 	</div>
 

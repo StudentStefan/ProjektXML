@@ -1,0 +1,62 @@
+body{
+	background-color:black;
+	font-family:"FreeMono",monospace;
+	color:white;
+	 background-image: radial-gradient(
+    rgba(0, 150, 0, 0.75), black 120%
+  );
+  text-shadow: 0 0 5px #C8C8C8;
+}
+table, th, td {
+  
+  text-align:center;
+}
+th{
+	background-color:green;
+	color:black
+}
+tr:hover {
+          background-color: white;
+          color:red;
+}
+.zamówienia{
+	
+
+
+}
+.gry{
+	position:relative;
+
+}
+.akcesoria{
+position:relative;
+		
+
+}
+.klawiatury{
+	position:absolute;
+	right:20%;
+}
+.zamówienie{
+padding:10px;
+}
+#szukaj_gry_nazwa {
+  font-size: 12px; /* Increase font-size */
+
+
+}
+
+#gry_tab {
+  border-collapse: collapse; /* Collapse borders */
+  width: 100%; /* Full-width */
+
+  font-size: 18px; /* Increase font-size */
+}
+
+#gry_tab th, #gry_tab td {
+  text-align: left; /* Left-align text */
+  padding: 12px; /* Add padding */
+}
+
+
+

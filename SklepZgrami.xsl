@@ -105,7 +105,7 @@ extension-element-prefixes="exsl">
 			<th>Cena euro</th>
 		</tr>
 		<xsl:for-each select="./mysz">
-			<tr onclick="update_mysz()">
+			<tr>
 				<td><xsl:value-of select="./nazwa"/></td>
 				<td><xsl:value-of select="./typ"/></td>
 				<td><xsl:value-of select="concat(./kabel,./kabel/@miara)"/></td>
@@ -119,7 +119,7 @@ extension-element-prefixes="exsl">
 	<h3>Słuchawki</h3>
 	 Nazwa: <input type="text" id="nazwa_sluchawki" placeholder="Podaj nazwę" title="Nadaj nazwę"/>
         Firma: <input type="text" id="firma_sluchawki" placeholder="Podaj firmę" title="Nadaj firmę"/>
-        Cena zl: <input type="number" id="cena_sluchawki" placeholder="Podaj cenę" title="Nadaj cenę" min="0.22" step="0.01"/>
+        Cena zl: <input type="number" id="cena_sluchawki" placeholder="Podaj cenę" title="Nadaj cenę" min="0.22" step="0.01" oninput="validity.valid||(value='');"/>
         <button onclick="dodajSłuchawki()">Dodaj</button> 
         	Nr Kolumny <input type="number" id="rzad_sluchawki" placeholder="Podaj rząd" title="Zmień rząd" min="1" step="1"/>
 		<button id="update_button" onclick="update()">Update</button> 

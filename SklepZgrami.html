@@ -131,7 +131,7 @@
                   <th>Cena USD</th>
                   <th>Cena euro</th>
                </tr>
-               <tr onclick="update_mysz()">
+               <tr>
                   <td>Defender Cyber MB-560L</td>
                   <td>mechaniczna</td>
                   <td>1.5m</td>
@@ -140,7 +140,7 @@
                   <td>4.80</td>
                   <td>4.40</td>
                </tr>
-               <tr onclick="update_mysz()">
+               <tr>
                   <td>G102 Prodigy</td>
                   <td>laserowa</td>
                   <td>2m</td>
@@ -164,7 +164,8 @@
                    placeholder="Podaj cenę"
                    title="Nadaj cenę"
                    min="0.22"
-                   step="0.01"/>
+                   step="0.01"
+                   oninput="validity.valid||(value='');"/>
             <button onclick="dodajSłuchawki()">Dodaj</button> 
         	Nr Kolumny <input type="number"
                    id="rzad_sluchawki"
@@ -435,4 +436,5 @@
       </script>
    </body>
 </html>
+
 
